@@ -29,7 +29,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "check": "node --check lib/index.js && node --check lib/qrcode.cjs"
+    "check": "node --check lib/index.js && node --check lib/qrcode.cjs",
+    "prepublishOnly": "npm run check"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
