@@ -1,0 +1,47 @@
+{
+  "name": "dsh-remote-auth",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "description": "DSH remote-access authorization page: one click or QR scan mints the current process's browser-session URL (no more digging tokens out of server logs). Optional authority/subnet fence and 8-char PIN gate. · DSH 远程授权页：点击链接或扫码即可铸造当前进程的浏览器会话，带 Host/网段围栏与 PIN 门禁。",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "remote-access",
+    "mobile",
+    "lan",
+    "tailscale",
+    "authorization",
+    "qr",
+    "browser-auth"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/qrcode.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wentao75/dsh-remote-auth.git"
+  },
+  "homepage": "https://github.com/wentao75/dsh-remote-auth#readme",
+  "bugs": {
+    "url": "https://github.com/wentao75/dsh-remote-auth/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

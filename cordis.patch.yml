@@ -1,0 +1,25 @@
+# dsh-remote-auth — bundle patch: self-mounts the host row.
+#
+# The row activates only after webServer + connection services exist, so it
+# works wherever the web profile composes those (dsh-base + dsh-web-app).
+#
+# Row config may be overridden from the profile's cordis.patch.yml, e.g.:
+#
+#   - id: dsh-remote-auth
+#     config:
+#       # Host-header allow-list: bare host (any port) or exact host:port.
+#       # Loopback hosts (localhost / 127.0.0.1 / ::1) are always allowed.
+#       allowedAuthorities:
+#         - minim4
+#         - minim4.tail4f6888.ts.net
+#       # Peer source-IP allow-list (CIDR). Loopback is always allowed.
+#       allowedSubnets:
+#         - "100.64.0.0/10"     # Tailscale CGNAT
+#         - "192.168.0.0/16"    # home LAN
+#       # 8-char alphanumeric PIN gate ("" disables the gate entirely).
+#       pin: ""
+#       # Use "https" once the server is fronted by a TLS reverse proxy.
+#       originProtocol: "http"
+- insert:
+    - id: dsh-remote-auth
+      name: dsh-remote-auth
