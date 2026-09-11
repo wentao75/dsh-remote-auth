@@ -36,9 +36,10 @@ launchctl kickstart -k gui/501/com.dsh.web        # macOS launchd
 
 - 局域网：`http://<Mac-name>.local:3080/mobile-auth`
 - Tailscale：`http://<host>.tailXXXX.ts.net:3080/mobile-auth`
-- 本机：`http://127.0.0.1:3080/mobile-auth`（回环访问额外显示当前 PIN）
+- 本机：`http://127.0.0.1:3080/mobile-auth`
 
 输入 PIN（若启用）→ 点"在本设备打开授权链接"（或让另一台设备扫二维码）。
+PIN 只在服务端 profile 配置里保存与查看，**任何页面上都不会显示 PIN**。
 
 ## 配置
 

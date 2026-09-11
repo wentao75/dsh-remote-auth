@@ -45,6 +45,7 @@ echo "$PAGE" | grep -c "在本设备打开授权链接"   # 1
 echo "$PAGE" | grep -c "QR unavailable"         # 0（二维码真实生成）
 echo "$PAGE" | grep -o 'width="[0-9]*px"'       # 有宽度
 echo "$PAGE" | grep -c 'autofocus'              # 1（PIN 输入框聚焦）
+echo "$PAGE" | grep -c "$PIN"                   # 0（页面绝不明码显示 PIN）
 ```
 
 ## 6. 门禁（OR 语义）
