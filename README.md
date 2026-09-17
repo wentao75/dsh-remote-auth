@@ -89,7 +89,9 @@ LAN IP 与 ts.net 域名是两张独立 cookie，需各自授权一次）。
 
 - 依赖内核扩展点：`ctx.webServer.register`（`dsh-host-webserver`）与
   `ctx.connection.authenticatedUrl`（`dsh-client-connection`）。
-- 已在 `dsh 0.1.2-rc.1` 验证；新内核升级后请运行 `docs/VERIFY.md` 清单。
+- 已验证内核版本：`0.1.2-rc.1`、**`0.1.6-alpha.1`**（2026-09-17 复检：上述扩展点
+  与浏览器认证模型均未变化，token 交换 / cookie / 门禁全链路通过）。
+- 升级 dsh 后请运行 `docs/VERIFY.md` 清单复验。
 - 明文 HTTP 环境（局域网/Tailscale IP）需要 `crypto.randomUUID` polyfill——
   配合 [dsh-web-lan-access](https://www.npmjs.com/package/dsh-web-lan-access)
   可自动注入（本插件不重复实现）。
